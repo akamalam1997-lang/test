@@ -1,0 +1,46 @@
+button{
+
+margin-top:40px;
+
+padding:18px 45px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:60px;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+135deg,
+#ff5f6d,
+#ffc371);
+
+color:white;
+
+font-weight:600;
+
+transition:.4s;
+
+box-shadow:
+
+0 0 25px
+rgba(255,120,120,.6);
+
+}
+
+button:hover{
+
+transform:
+translateY(-5px)
+scale(1.05);
+
+box-shadow:
+
+0 15px 40px
+rgba(255,120,120,.7);
+
+}
