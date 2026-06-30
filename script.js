@@ -63,10 +63,9 @@ function showLoading(){
             clearInterval(timer);
 
             setTimeout(()=>{
-startBirthdayFireworks();
-                hideScene("loading");
+               hideScene("loading");
                 showScene("welcome");
-
+startBirthdayFireworks();
                 startTyping();
 
             },600);
