@@ -1,5 +1,3 @@
-
-function startPhotoSlideshow(slides){
 const photos = [
 {
     title:"❤️ A Moment That Changed Everything 💍",
@@ -29,6 +27,7 @@ const photos = [
     image:"https://github.com/user-attachments/assets/68a60bda-b9fc-402a-b880-31b3197ec478"
 }
 ];
+function startPhotoSlideshow(slides){
 
     const slider = document.getElementById("photoSlider");
     const image = document.getElementById("slideImage");
