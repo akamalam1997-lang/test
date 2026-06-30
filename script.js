@@ -31,34 +31,41 @@ window.addEventListener("load", () => {
 
 
 const flame = document.getElementById("flame");
-
+const birthdaySection = document.getElementById("birthdaySection");
 const button = document.getElementById("blowBtn");
 
-button.onclick = () => {
+button.addEventListener("click", () => {
 
-    flame.animate([
-        {opacity:1,transform:"translateX(-50%) scale(1)"},
-        {opacity:0,transform:"translateX(-50%) scale(0)"}
-    ],{
-        duration:700,
-        fill:"forwards"
-    });
+    // Disable button after first click
+    button.disabled = true;
 
-    button.innerHTML="🎉 Happy Birthday!";
+    // Hide flame immediately
+    flame.style.opacity = "0";
 
-    setTimeout(()=>{
+    // Optional: hide button
+    button.style.display = "none";
 
-        // Open next page
-        // document.getElementById("gallery").scrollIntoView({
-        //     behavior:"smooth"
-        // });
+    // Wait 2 seconds
+    setTimeout(() => {
 
-        alert("Continue to the Birthday Surprise ❤️");
+        // Fade out entire screen
+        birthdaySection.style.transition = "opacity 2s ease";
+        birthdaySection.style.opacity = "0";
 
-    },1200);
+        // Remove screen after fade
+        setTimeout(() => {
+            birthdaySection.style.display = "none";
 
-}
+            // Call your next function here
+            // showMemories();
+            // startGallery();
+            // window.location.href = "gallery.html";
 
+        }, 2000);
+
+    }, 2000);
+
+});
 /* ==========================================
 Loading Screen
 ========================================== */
