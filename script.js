@@ -63,7 +63,7 @@ function showLoading(){
             clearInterval(timer);
 
             setTimeout(()=>{
-
+startBirthdayFireworks();
                 hideScene("loading");
                 showScene("welcome");
 
