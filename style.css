@@ -2,6 +2,83 @@
    Happy Birthday Vignesh ❤️
    Premium Theme
 =================================================== */
+/*gift*/
+#giftScreen{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:#000;
+
+    color:white;
+
+    z-index:9999;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:opacity 2s ease;
+
+}
+
+#giftScreen h1{
+
+    font-size:70px;
+
+    color:#FFD700;
+
+    text-shadow:0 0 25px gold;
+
+    margin-bottom:30px;
+
+}
+
+#giftScreen p{
+
+    width:700px;
+
+    font-size:26px;
+
+    line-height:42px;
+
+    margin-bottom:60px;
+
+}
+
+#giftBtn{
+
+    padding:18px 45px;
+
+    font-size:24px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(45deg,#d4af37,#b8860b);
+
+    box-shadow:0 0 25px gold;
+
+    transition:.3s;
+
+}
+
+#giftBtn:hover{
+
+    transform:scale(1.08);
+
+}
 /*image*/
 #photoSlider{
     position:fixed;
