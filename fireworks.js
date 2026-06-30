@@ -27,7 +27,9 @@ const photos = [
     image:"https://github.com/user-attachments/assets/68a60bda-b9fc-402a-b880-31b3197ec478"
 }
 ];
-function startPhotoSlideshow(slides){
+let slideInterval;
+
+function startPhotoSlideshow(slides) {
 
     const slider = document.getElementById("photoSlider");
     const image = document.getElementById("slideImage");
@@ -37,38 +39,33 @@ function startPhotoSlideshow(slides){
 
     let index = 0;
 
-    function showSlide(){
+    function showSlide() {
 
-        title.style.opacity = 0;
-        image.parentElement.style.opacity = 0;
-        image.parentElement.style.transform = "scale(.9)";
+        title.style.opacity = "0";
+        image.parentElement.style.opacity = "0";
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            title.innerHTML = slides[index].title;
+            title.innerText = slides[index].title;
             image.src = slides[index].image;
 
-            title.style.opacity = 1;
-            image.parentElement.style.opacity = 1;
-            image.parentElement.style.transform = "scale(1)";
+            title.style.opacity = "1";
+            image.parentElement.style.opacity = "1";
 
             index++;
 
-            if(index >= slides.length){
-                index = 0; // Loop
-                // or replace with:
-                // slider.style.display = "none";
-                // return;
+            if (index >= slides.length) {
+                clearInterval(slideInterval);
+                return;
             }
 
-        },500);
+        }, 500);
 
     }
 
     showSlide();
 
-    setInterval(showSlide,3000);
-
+    slideInterval = setInterval(showSlide, 3000);
 }
 function blowcandle() {
 const flame = document.getElementById("flame");
