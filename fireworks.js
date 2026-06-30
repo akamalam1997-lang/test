@@ -39,29 +39,44 @@ function startPhotoSlideshow(slides) {
 
     let index = 0;
 
-    function showSlide() {
+ function showSlide() {
 
-        title.style.opacity = "0";
-        image.parentElement.style.opacity = "0";
+    // Fade out current slide
+    title.style.opacity = "0";
+    image.parentElement.style.opacity = "0";
+    image.parentElement.style.transform = "scale(0.95)";
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            title.innerText = slides[index].title;
-            image.src = slides[index].image;
+        // Preload the next image
+        const nextImg = new Image();
+        nextImg.src = slides[index].image;
 
+        nextImg.onload = () => {
+
+            // Update content only after image is loaded
+            title.innerHTML = slides[index].title;
+            image.src = nextImg.src;
+
+            // Fade in together
             title.style.opacity = "1";
             image.parentElement.style.opacity = "1";
+            image.parentElement.style.transform = "scale(1)";
 
             index++;
 
             if (index >= slides.length) {
                 clearInterval(slideInterval);
+
+                // Optional: Call your next function here
+                // showFinalMessage();
+
                 return;
             }
+        };
 
-        }, 3000);
-
-    }
+    }, 700);
+}
 
     showSlide();
 
