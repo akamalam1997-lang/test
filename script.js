@@ -4,8 +4,6 @@
 ====================================================== */
 let currentScene = 0;
 let typingFinished = false;
-const canvas=document.getElementById("canvas");
-const ctx=canvas.getContext("2d");
 // Scene Order
 const scenes = [
     "loading",
@@ -20,8 +18,6 @@ const scenes = [
 window.addEventListener("load", () => {
 
     showLoading();
-   
-   
 
     setupButtons();
 
@@ -82,173 +78,7 @@ function showLoading(){
 }
 
 
-/*firework*/
-function startfirework()
-{
-   const canvas=document.getElementById("canvas");
-const ctx=canvas.getContext("2d");
 
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-window.addEventListener("resize",()=>{
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-});
-
-let fireworks=[];
-
-class Firework{
-
-constructor(){
-
-this.x=Math.random()*canvas.width;
-this.y=canvas.height;
-
-this.targetY=Math.random()*canvas.height/2;
-
-this.color=`hsl(${Math.random()*360},100%,60%)`;
-
-this.exploded=false;
-
-this.particles=[];
-
-}
-
-update(){
-
-if(!this.exploded){
-
-this.y-=6;
-
-if(this.y<=this.targetY){
-
-this.explode();
-
-}
-
-}else{
-
-this.particles.forEach((p,index)=>{
-
-p.x+=p.vx;
-
-p.y+=p.vy;
-
-p.life--;
-
-if(p.life<=0){
-
-this.particles.splice(index,1);
-
-}
-
-});
-
-}
-
-}
-
-draw(){
-
-if(!this.exploded){
-
-ctx.beginPath();
-
-ctx.arc(this.x,this.y,3,0,Math.PI*2);
-
-ctx.fillStyle="white";
-
-ctx.fill();
-
-}else{
-
-this.particles.forEach(p=>{
-
-ctx.beginPath();
-
-ctx.arc(p.x,p.y,2,0,Math.PI*2);
-
-ctx.fillStyle=this.color;
-
-ctx.fill();
-
-});
-
-}
-
-}
-
-explode(){
-
-this.exploded=true;
-
-for(let i=0;i<80;i++){
-
-let angle=Math.random()*Math.PI*2;
-
-let speed=Math.random()*5+2;
-
-this.particles.push({
-
-x:this.x,
-
-y:this.y,
-
-vx:Math.cos(angle)*speed,
-
-vy:Math.sin(angle)*speed,
-
-life:80
-
-});
-
-}
-
-}
-
-}
-
-function animate(){
-
-ctx.fillStyle="rgba(0,0,0,0.2)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-if(Math.random()<0.08){
-
-fireworks.push(new Firework());
-
-}
-
-fireworks.forEach((fw,index)=>{
-
-fw.update();
-
-fw.draw();
-
-if(fw.exploded && fw.particles.length===0){
-
-fireworks.splice(index,1);
-
-}
-
-});
-
-requestAnimationFrame(animate);
-
-}
-
-animate();
-
-setTimeout(()=>{
-
-canvas.style.opacity="0";
-
-document.getElementById("message").classList.add("show");
-
-},7000);
-
-}
 /* ==========================================
 Typewriter
 ========================================== */
@@ -438,27 +268,7 @@ function startScanner(){
 
 
 
-/* ==========================================
-Background Music
-========================================== */
 
-let bgMusic;
-
-/*function setupMusic(){
-
-    bgMusic=document.getElementById("bgMusic");
-
-    if(!bgMusic) return;
-
-    bgMusic.volume=0.25;
-
-    document.body.addEventListener("click",()=>{
-
-        bgMusic.play().catch(()=>{});
-
-    },{once:true});
-
-}*/
 
 
 
@@ -875,34 +685,6 @@ launchConfetti();
 
 
 
-/* ==========================================
-Music Fade
-========================================== */
-
-/*function fadeMusic(){
-
-if(!bgMusic) return;
-
-let vol=bgMusic.volume;
-
-const timer=setInterval(()=>{
-
-vol-=0.05;
-
-bgMusic.volume=vol;
-
-if(vol<=0){
-
-clearInterval(timer);
-
-bgMusic.pause();
-
-}
-
-},200);
-
-}*/
-
 
 
 /* ==========================================
@@ -925,50 +707,3 @@ origin:{y:.6}
 
 
 
-/* ==========================================
-Fireworks
-========================================== */
-
-function launchFireworks(){
-
-let duration=6000;
-
-let animationEnd=Date.now()+duration;
-
-(function frame(){
-
-confetti({
-
-particleCount:6,
-
-angle:60,
-
-spread:55,
-
-origin:{x:0}
-
-});
-
-confetti({
-
-particleCount:6,
-
-angle:120,
-
-spread:55,
-
-origin:{x:1}
-
-});
-
-if(Date.now()<animationEnd){
-
-requestAnimationFrame(frame);
-
-}
-
-})();
-
-}
-
-console.log("Part 3 Loaded ❤️");
