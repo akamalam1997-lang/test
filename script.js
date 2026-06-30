@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
 
     showLoading();
    
-   startfirework();
+   
 
     setupButtons();
 
