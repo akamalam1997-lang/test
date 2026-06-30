@@ -30,7 +30,34 @@ window.addEventListener("load", () => {
 // Wait until everything is loaded
 
 
+const flame = document.getElementById("flame");
 
+const button = document.getElementById("blowBtn");
+
+button.onclick = () => {
+
+    flame.animate([
+        {opacity:1,transform:"translateX(-50%) scale(1)"},
+        {opacity:0,transform:"translateX(-50%) scale(0)"}
+    ],{
+        duration:700,
+        fill:"forwards"
+    });
+
+    button.innerHTML="🎉 Happy Birthday!";
+
+    setTimeout(()=>{
+
+        // Open next page
+        // document.getElementById("gallery").scrollIntoView({
+        //     behavior:"smooth"
+        // });
+
+        alert("Continue to the Birthday Surprise ❤️");
+
+    },1200);
+
+}
 
 /* ==========================================
 Loading Screen
