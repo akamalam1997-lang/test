@@ -30,36 +30,34 @@
 
     opacity:0;
 
-    transition:1s;
+    transition: opacity .7s ease;
 }
 
 .image-card{
 
-    width:700px;
+    width:90%;
+    max-width:800px;
+    max-height:80vh;
 
-    height:450px;
-
-    border-radius:35px;
-
+    border-radius:30px;
     overflow:hidden;
 
-    box-shadow:
-    0 0 35px rgba(255,215,0,.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    transform:scale(.9);
-
-    opacity:0;
-
-    transition:1s;
+    background:#111;
+ transition: opacity .7s ease, transform .7s ease;
 }
 
 .image-card img{
 
-    width:100%;
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
 
-    height:100%;
-
-    object-fit:cover;
+    object-fit:contain;
 
 }
 
