@@ -2,7 +2,168 @@
    Happy Birthday Vignesh ❤️
    Part 1
 ====================================================== */
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
 
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+window.addEventListener("resize",()=>{
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+});
+
+let fireworks=[];
+
+class Firework{
+
+constructor(){
+
+this.x=Math.random()*canvas.width;
+this.y=canvas.height;
+
+this.targetY=Math.random()*canvas.height/2;
+
+this.color=`hsl(${Math.random()*360},100%,60%)`;
+
+this.exploded=false;
+
+this.particles=[];
+
+}
+
+update(){
+
+if(!this.exploded){
+
+this.y-=6;
+
+if(this.y<=this.targetY){
+
+this.explode();
+
+}
+
+}else{
+
+this.particles.forEach((p,index)=>{
+
+p.x+=p.vx;
+
+p.y+=p.vy;
+
+p.life--;
+
+if(p.life<=0){
+
+this.particles.splice(index,1);
+
+}
+
+});
+
+}
+
+}
+
+draw(){
+
+if(!this.exploded){
+
+ctx.beginPath();
+
+ctx.arc(this.x,this.y,3,0,Math.PI*2);
+
+ctx.fillStyle="white";
+
+ctx.fill();
+
+}else{
+
+this.particles.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
+ctx.fillStyle=this.color;
+
+ctx.fill();
+
+});
+
+}
+
+}
+
+explode(){
+
+this.exploded=true;
+
+for(let i=0;i<80;i++){
+
+let angle=Math.random()*Math.PI*2;
+
+let speed=Math.random()*5+2;
+
+this.particles.push({
+
+x:this.x,
+
+y:this.y,
+
+vx:Math.cos(angle)*speed,
+
+vy:Math.sin(angle)*speed,
+
+life:80
+
+});
+
+}
+
+}
+
+}
+
+function animate(){
+
+ctx.fillStyle="rgba(0,0,0,0.2)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+if(Math.random()<0.08){
+
+fireworks.push(new Firework());
+
+}
+
+fireworks.forEach((fw,index)=>{
+
+fw.update();
+
+fw.draw();
+
+if(fw.exploded && fw.particles.length===0){
+
+fireworks.splice(index,1);
+
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+setTimeout(()=>{
+
+canvas.style.opacity="0";
+
+document.getElementById("message").classList.add("show");
+
+},7000);
 let currentScene = 0;
 let typingFinished = false;
 
