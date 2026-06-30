@@ -27,6 +27,7 @@ const photos = [
     image:"https://github.com/user-attachments/assets/68a60bda-b9fc-402a-b880-31b3197ec478"
 }
 ];
+
 let slideInterval;
 
 function startPhotoSlideshow(slides) {
@@ -82,6 +83,30 @@ function startPhotoSlideshow(slides) {
 
     slideInterval = setInterval(showSlide, 12000);
 }
+function showGiftScreen(){
+
+    const screen=document.getElementById("giftScreen");
+
+    screen.style.display="flex";
+
+    setTimeout(()=>{
+        screen.style.opacity="1";
+    },100);
+
+}
+document.getElementById("giftBtn").onclick=function(){
+
+    document.getElementById("giftScreen").style.opacity="0";
+
+    setTimeout(()=>{
+
+        document.getElementById("giftScreen").style.display="none";
+
+        startPhotoSlideshow(photos);
+
+    },2000);
+
+}
 function blowcandle() {
 const flame = document.getElementById("flame");
 const birthdaySection = document.getElementById("birthdaySection");
@@ -106,7 +131,7 @@ const button = document.getElementById("blowBtn");
         // Remove screen after fade
         setTimeout(() => {
             birthdaySection.style.display = "none";
-startPhotoSlideshow(photos);
+ showGiftScreen();
             // Call your next function here
             // showMemories();
             // startGallery();
