@@ -16,6 +16,15 @@ const scenes = [
     "video",
     "ending"
 ];
+window.addEventListener("load", () => {
+
+    showLoading();
+
+    setupButtons();
+
+    /*setupMusic();*/
+
+});
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 
@@ -181,15 +190,7 @@ document.getElementById("message").classList.add("show");
 
 
 // Wait until everything is loaded
-window.addEventListener("load", () => {
 
-    showLoading();
-
-    setupButtons();
-
-    /*setupMusic();*/
-
-});
 
 
 
