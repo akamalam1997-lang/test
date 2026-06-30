@@ -95,7 +95,7 @@ const button = document.getElementById("blowBtn");
         // Remove screen after fade
         setTimeout(() => {
             birthdaySection.style.display = "none";
-startPhotoSlideshow(photos);
+//startPhotoSlideshow(photos);
             // Call your next function here
             // showMemories();
             // startGallery();
