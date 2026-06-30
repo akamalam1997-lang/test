@@ -273,7 +273,7 @@ Background Music
 
 let bgMusic;
 
-function setupMusic(){
+/*function setupMusic(){
 
     bgMusic=document.getElementById("bgMusic");
 
@@ -287,7 +287,7 @@ function setupMusic(){
 
     },{once:true});
 
-}
+}*/
 
 
 
@@ -658,7 +658,7 @@ Play Video
 
 const playBtn=document.getElementById("playVideo");
 
-if(playBtn){
+/*if(playBtn){
 
 playBtn.onclick=function(){
 
@@ -685,7 +685,7 @@ showEnding();
 }
 
 }
-
+*/
 
 
 /* ==========================================
@@ -708,7 +708,7 @@ launchConfetti();
 Music Fade
 ========================================== */
 
-function fadeMusic(){
+/*function fadeMusic(){
 
 if(!bgMusic) return;
 
@@ -730,7 +730,7 @@ bgMusic.pause();
 
 },200);
 
-}
+}*/
 
 
 
