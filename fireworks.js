@@ -1,5 +1,5 @@
 
-function startPhotoSlideshow(slides){
+/*function startPhotoSlideshow(slides){
 const photos = [
 {
     title:"❤️ A Moment That Changed Everything 💍",
@@ -70,7 +70,7 @@ const photos = [
 
     setInterval(showSlide,3000);
 
-}
+}*/
 function blowcandle() {
 const flame = document.getElementById("flame");
 const birthdaySection = document.getElementById("birthdaySection");
