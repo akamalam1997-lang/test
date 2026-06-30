@@ -1,5 +1,5 @@
 
-/*function startPhotoSlideshow(slides){
+function startPhotoSlideshow(slides){
 const photos = [
 {
     title:"❤️ A Moment That Changed Everything 💍",
@@ -70,7 +70,7 @@ const photos = [
 
     setInterval(showSlide,3000);
 
-}*/
+}
 function blowcandle() {
 const flame = document.getElementById("flame");
 const birthdaySection = document.getElementById("birthdaySection");
@@ -95,7 +95,7 @@ const button = document.getElementById("blowBtn");
         // Remove screen after fade
         setTimeout(() => {
             birthdaySection.style.display = "none";
-//startPhotoSlideshow(photos);
+startPhotoSlideshow(photos);
             // Call your next function here
             // showMemories();
             // startGallery();
