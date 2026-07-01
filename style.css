@@ -57,7 +57,7 @@
     position:relative;
     z-index:2;
 
-    color:#ff4d4d;
+    color:#ff8080;
 
     font-size:55px;
 
@@ -70,8 +70,8 @@
     line-height:1.5;
 
     text-shadow:
-        0 0 15px #ff4d4d,
-        0 0 30px #ff4d4d;
+        0 0 15px #ff8080,
+        0 0 30px #ff8080;
 
     opacity:0;
 
