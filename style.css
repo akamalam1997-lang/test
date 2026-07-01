@@ -202,7 +202,7 @@
 
 .slide-title{
 
-    color:#FFD700;
+    color:#ff6699;
 
     font-size:45px;
 
@@ -212,11 +212,11 @@
 
     letter-spacing:2px;
 
-    text-shadow:0 0 20px gold;
+    text-shadow:0 0 20px #ff6699;
 
     opacity:0;
 
-    transition: opacity .7s ease;
+    transition: opacity .7s ease, transform .7s ease;
 }
 
 .image-card{
