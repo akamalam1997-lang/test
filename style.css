@@ -37,35 +37,55 @@
     transition:opacity .8s;
 }
 
-#continueScreen{
+#finalcontinueScreen{
     display:none;
 }
 
-#continueScreen h1{
+#finalcontinueScreen h1{
     font-size:70px;
     color:#ff6699;
     text-shadow:0 0 20px gold;
 }
 
-#continueScreen h2{
+#finalcontinueScreen h2{
     margin-top:30px;
     font-size:40px;
     color:white;
 }
 
-#continueScreen h3{
+#finalcontinueScreen h3{
     margin-top:20px;
     font-size:34px;
     color:#ff6699;
 }
 
-#continueScreen p{
+#finalcontinueScreen p{
     margin-top:60px;
     color:#bbb;
     font-size:20px;
 }
 
+.endstars{
+    position:absolute;
+    inset:0;
+    background-image:
+    radial-gradient(#FFD700 1px, transparent 1px);
+    background-size:60px 60px;
+    opacity:.35;
+    animation:moveStars 20s linear infinite;
+}
 
+@keyframes moveendstars{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-120px);
+    }
+
+}
 
 
 /*gift*/
