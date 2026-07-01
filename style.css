@@ -2,6 +2,90 @@
    Happy Birthday Vignesh ❤️
    Premium Theme
 =================================================== */
+/*final message */
+#endingScreen{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    z-index:999999;
+    color:#fff;
+    text-align:center;
+    font-family:'Georgia',serif;
+}
+
+#endingContent{
+    width:80%;
+    max-width:900px;
+}
+
+#endingContent h1{
+    color:#FFD700;
+    font-size:60px;
+    margin-bottom:40px;
+    text-shadow:0 0 20px gold;
+}
+
+#endingText{
+    font-size:32px;
+    line-height:60px;
+    min-height:200px;
+    color:#fff;
+    transition:opacity .8s;
+}
+
+#continueScreen{
+    display:none;
+}
+
+#continueScreen h1{
+    font-size:70px;
+    color:#FFD700;
+    text-shadow:0 0 20px gold;
+}
+
+#continueScreen h2{
+    margin-top:30px;
+    font-size:40px;
+    color:white;
+}
+
+#continueScreen h3{
+    margin-top:20px;
+    font-size:34px;
+    color:#FFD700;
+}
+
+#continueScreen p{
+    margin-top:60px;
+    color:#bbb;
+    font-size:20px;
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+    background-image:
+    radial-gradient(#FFD700 1px, transparent 1px);
+    background-size:60px 60px;
+    opacity:.35;
+    animation:moveStars 20s linear infinite;
+}
+
+@keyframes moveStars{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-120px);
+    }
+
+}
 /*gift*/
 /* ===============================
    Gift Intro Screen
