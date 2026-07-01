@@ -57,7 +57,7 @@
     position:relative;
     z-index:2;
 
-    color:#FFD700;
+    color:#ff4d4d;
 
     font-size:55px;
 
@@ -70,8 +70,8 @@
     line-height:1.5;
 
     text-shadow:
-        0 0 15px gold,
-        0 0 30px rgba(255,215,0,.5);
+        0 0 15px #ff4d4d,
+        0 0 30px #ff4d4d;
 
     opacity:0;
 
@@ -105,7 +105,7 @@
 
     margin-top:20px;
 
-    color:#fff;
+    color:#ff4d4d;
 
     font-size:34px;
 
@@ -129,13 +129,13 @@
 
     cursor:pointer;
 
-    color:#fff;
+    color:#ff4d4d;
 
     background:linear-gradient(45deg,#FFD700,#b8860b);
 
     box-shadow:
-        0 0 20px gold,
-        0 0 50px rgba(255,215,0,.4);
+        0 0 20px #ff4d4d,
+        0 0 50px #ff4d4d;
 
     transition:.3s;
 
@@ -146,8 +146,8 @@
     transform:scale(1.08);
 
     box-shadow:
-        0 0 30px gold,
-        0 0 60px rgba(255,215,0,.8);
+        0 0 30px #ff4d4d,
+        0 0 60px #ff4d4d;
 
 }
 
