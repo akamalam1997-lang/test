@@ -66,7 +66,7 @@ function showEndingScreen(){
 
         "Life isn't the same without you...",
 
-        "Even your adorable nagging. 😊",
+        "Even your nagging. 😊",
 
         "I can't wait to see you again.",
 
