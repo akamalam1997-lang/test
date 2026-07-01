@@ -86,7 +86,7 @@ function showGiftIntro(){
     next();
 
 }
-document.getElementById("openGift").onclick=()=>{
+function giftboxopen{
 
     document.getElementById("giftPage").style.opacity=0;
 
@@ -94,7 +94,7 @@ document.getElementById("openGift").onclick=()=>{
 
         document.getElementById("giftPage").style.display="none";
 
-        startPhotoSlideshow(photos);
+        startPhotoSlideshow();
 
     },1500);
 
