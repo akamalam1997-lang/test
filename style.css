@@ -571,6 +571,8 @@ transform:scale(1.05);
     opacity:0;
     transition:opacity 3s;
     z-index:10000;
+    display:flex;
+    opacity:1;
 }
 
 #birthdayMessage h1{
