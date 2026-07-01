@@ -34,15 +34,15 @@ const messages = [
 
 "Today isn't just your birthday...",
 
-"It's the day the person who changed my life forever was born.",
+"It's the day the person who changed my life forever was born.💖",
 
-"Thank you for every smile...",
+"Thank you for every smile...💕",
 
-"Every sacrifice...",
+"Every sacrifice...💕",
 
-"Every laugh...",
+"Every laugh...💕",
 
-"And every beautiful memory we've created together."
+"And every beautiful memory we've created together.💕"
 
 ];
 
@@ -147,12 +147,12 @@ function startPhotoSlideshow() {
             }
         };
 
-    }, 700);
+    }, 1000);
 }
 
     showSlide();
 
-    slideInterval = setInterval(showSlide, 12000);
+    slideInterval = setInterval(showSlide, 20000);
 }
 
 
