@@ -21,10 +21,10 @@ const photos = [
 
 {
     title:"🥰 I Married One, Now I Have Two!",
-    image:"https://github.com/user-attachments/assets/8972321a-b449-4844-95fa-9a92c85668d6"
+    image:"https://github.com/user-attachments/assets/a831713a-d374-48f0-998b-44bc1e42760b"
 },
 {
-    title:"❤️ Happy Birthday, My Love. Our best chapters are yet to be written. I miss you every day. Life isn't the same without you... even your nagging. Can't wait to be with you again. ❤️",
+    title:"🏡 Waiting for This Dream to Come True.",
     image:"https://github.com/user-attachments/assets/68a60bda-b9fc-402a-b880-31b3197ec478"
 }
 ];
@@ -45,7 +45,66 @@ const messages = [
 "And every beautiful memory we've created together.💕"
 
 ];
+function showEndingScreen(){
 
+    const screen=document.getElementById("endingScreen");
+    const text=document.getElementById("endingText");
+
+    screen.style.display="flex";
+
+    const messages=[
+
+        "Thank you for being my smile on the hardest days.",
+
+        "Thank you for being the best husband.",
+
+        "The most loving father.",
+
+        "And my forever best friend. ❤️",
+
+        "I miss you every single day.",
+
+        "Life isn't the same without you...",
+
+        "Even your adorable nagging. 😊",
+
+        "I can't wait to see you again.",
+
+        "Until then..."
+
+    ];
+
+    let i=0;
+
+    function nextMessage(){
+
+        if(i>=messages.length){
+
+            document.getElementById("endingContent").style.display="none";
+            document.getElementById("continueScreen").style.display="block";
+
+            return;
+        }
+
+        text.style.opacity=0;
+
+        setTimeout(()=>{
+
+            text.innerHTML=messages[i];
+
+            text.style.opacity=1;
+
+            i++;
+
+            setTimeout(nextMessage,2500);
+
+        },500);
+
+    }
+
+    nextMessage();
+
+}
 function showGiftIntro(){
 
     const page=document.getElementById("giftPage");
@@ -140,6 +199,11 @@ function startPhotoSlideshow() {
             if (index >= photos.length) {
                 clearInterval(slideInterval);
 
+setTimeout(()=>{
+
+    showEndingScreen();
+
+},1000);
                 // Optional: Call your next function here
                 // showFinalMessage();
 
@@ -151,7 +215,11 @@ function startPhotoSlideshow() {
 }
 
     showSlide();
-
+if (index == photos.length) {
+    slideInterval = setInterval(showSlide, 25000);
+}
+    else
+{
     slideInterval = setInterval(showSlide, 20000);
 }
 
