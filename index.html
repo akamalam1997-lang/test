@@ -97,20 +97,24 @@ body {
 <script src="fireworks.js"></script>
  
 <!-- Create the button and trigger the play() function on click -->
-    <div id="giftScreen">
+    <div id="giftPage">
 
-    <h1>🎉 Happy Birthday, Vignesh! 🎉</h1>
+    <div id="giftMessage"></div>
 
-    <p>
-        Hope you have a wonderful year filled with happiness,
-        success, good health, and beautiful memories.
-    </p>
+    <div id="giftBox" style="display:none;">
 
-    <button id="giftBtn" onclick="startPhotoSlideshow();">
-        🎁 Click to See Your Gift
-    </button>
+        <div class="gift-icon">🎁</div>
+
+        <h2>I've wrapped something special just for you...</h2>
+
+        <button id="openGift" onclick="startPhotoSlideshow();">
+            ❤️ Open My Gift ❤️
+        </button>
+
+    </div>
 
 </div>
+    <!--photo-->
 <div id="photoSlider" style="display:none;">
     <div class="slide-title" id="slideTitle"></div>
 
