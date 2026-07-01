@@ -23,7 +23,7 @@
 }
 
 #endingContent h1{
-    color:#FFD700;
+    color:#ff6699;
     font-size:60px;
     margin-bottom:40px;
     text-shadow:0 0 20px gold;
@@ -43,7 +43,7 @@
 
 #continueScreen h1{
     font-size:70px;
-    color:#FFD700;
+    color:#ff6699;
     text-shadow:0 0 20px gold;
 }
 
@@ -56,7 +56,7 @@
 #continueScreen h3{
     margin-top:20px;
     font-size:34px;
-    color:#FFD700;
+    color:#ff6699;
 }
 
 #continueScreen p{
@@ -69,7 +69,7 @@
     position:absolute;
     inset:0;
     background-image:
-    radial-gradient(#FFD700 1px, transparent 1px);
+    radial-gradient(#ff6699 1px, transparent 1px);
     background-size:60px 60px;
     opacity:.35;
     animation:moveStars 20s linear infinite;
