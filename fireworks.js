@@ -30,7 +30,7 @@ const photos = [
 
 let slideInterval;
 
-function startPhotoSlideshow(slides) {
+function startPhotoSlideshow() {
 
     const slider = document.getElementById("photoSlider");
     const image = document.getElementById("slideImage");
@@ -51,12 +51,12 @@ function startPhotoSlideshow(slides) {
 
         // Preload the next image
         const nextImg = new Image();
-        nextImg.src = slides[index].image;
+        nextImg.src = photos[index].image;
 
         nextImg.onload = () => {
 
             // Update content only after image is loaded
-            title.innerHTML = slides[index].title;
+            title.innerHTML = photos[index].title;
             image.src = nextImg.src;
 
             // Fade in together
@@ -66,7 +66,7 @@ function startPhotoSlideshow(slides) {
 
             index++;
 
-            if (index >= slides.length) {
+            if (index >= photos.length) {
                 clearInterval(slideInterval);
 
                 // Optional: Call your next function here
@@ -94,7 +94,7 @@ function showGiftScreen(){
     },100);
 
 }
-document.getElementById("giftBtn").onclick=function(){
+/*document.getElementById("giftBtn").onclick=function(){
 
     document.getElementById("giftScreen").style.opacity="0";
 
@@ -106,7 +106,7 @@ document.getElementById("giftBtn").onclick=function(){
 
     },2000);
 
-}
+}*/
 function blowcandle() {
 const flame = document.getElementById("flame");
 const birthdaySection = document.getElementById("birthdaySection");
