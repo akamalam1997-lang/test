@@ -61,7 +61,7 @@
 
     font-size:55px;
 
-    font-family:Georgia,serif;
+    font-family: 'Brush Script MT', cursive;
 
     width:80%;
 
@@ -263,7 +263,7 @@ align-items:center;
 
 overflow:hidden;
 
-font-family:Georgia,serif;
+font-family: 'Brush Script MT', cursive;
 
 color:white;
 
@@ -676,7 +676,7 @@ html{
 
 body{
 
-    font-family:'Poppins',sans-serif;
+    font-family: 'Brush Script MT', cursive;
 
     overflow:hidden;
 
