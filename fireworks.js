@@ -1,3 +1,4 @@
+
 const photos = [
 {
     title:"❤️ A Moment That Changed Everything 💍",
@@ -27,7 +28,64 @@ const photos = [
     image:"https://github.com/user-attachments/assets/68a60bda-b9fc-402a-b880-31b3197ec478"
 }
 ];
+const messages = [
 
+"Dear Vignesh,",
+
+"Today isn't just your birthday...",
+
+"It's the day the person who changed my life forever was born.",
+
+"Thank you for every smile...",
+
+"Every sacrifice...",
+
+"Every laugh...",
+
+"And every beautiful memory we've created together."
+
+];
+
+function showGiftIntro(){
+
+    const page=document.getElementById("giftPage");
+    const msg=document.getElementById("giftMessage");
+
+    page.style.display="flex";
+
+    let i=0;
+
+    function next(){
+
+        if(i>=messages.length){
+
+            msg.style.display="none";
+
+            document.getElementById("giftBox").style.display="block";
+
+            return;
+
+        }
+
+        msg.style.opacity=0;
+
+        setTimeout(()=>{
+
+            msg.innerHTML=messages[i];
+
+            msg.style.opacity=1;
+
+            i++;
+
+            setTimeout(next,2500);
+
+        },700);
+
+    }
+
+    next();
+
+}
 let slideInterval;
 
 function startPhotoSlideshow() {
@@ -131,7 +189,7 @@ const button = document.getElementById("blowBtn");
         // Remove screen after fade
         setTimeout(() => {
             birthdaySection.style.display = "none";
- showGiftScreen();
+ showGiftIntro();
             // Call your next function here
             // showMemories();
             // startGallery();
