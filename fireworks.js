@@ -86,6 +86,19 @@ function showGiftIntro(){
     next();
 
 }
+document.getElementById("openGift").onclick=()=>{
+
+    document.getElementById("giftPage").style.opacity=0;
+
+    setTimeout(()=>{
+
+        document.getElementById("giftPage").style.display="none";
+
+        startPhotoSlideshow(photos);
+
+    },1500);
+
+}
 let slideInterval;
 
 function startPhotoSlideshow() {
@@ -141,30 +154,8 @@ function startPhotoSlideshow() {
 
     slideInterval = setInterval(showSlide, 12000);
 }
-function showGiftScreen(){
 
-    const screen=document.getElementById("giftScreen");
 
-    screen.style.display="flex";
-
-    setTimeout(()=>{
-        screen.style.opacity="1";
-    },100);
-
-}
-/*document.getElementById("giftBtn").onclick=function(){
-
-    document.getElementById("giftScreen").style.opacity="0";
-
-    setTimeout(()=>{
-
-        document.getElementById("giftScreen").style.display="none";
-
-        startPhotoSlideshow(photos);
-
-    },2000);
-
-}*/
 function blowcandle() {
 const flame = document.getElementById("flame");
 const birthdaySection = document.getElementById("birthdaySection");
