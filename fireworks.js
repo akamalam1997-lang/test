@@ -86,7 +86,7 @@ function showGiftIntro(){
     next();
 
 }
-function giftboxopen{
+function giftboxopen(){
 
     document.getElementById("giftPage").style.opacity=0;
 
